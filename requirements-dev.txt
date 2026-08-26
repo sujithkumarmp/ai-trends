@@ -1,0 +1,2 @@
+# Test-only dependencies. Runtime deps live in the requirements.txt next to the code.
+pytest>=8.0
