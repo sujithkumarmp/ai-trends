@@ -97,7 +97,8 @@ Ensure `.github/workflows/unit-tests.yml` exists and covers:
   run page without downloading anything
 - upload the reports as an artifact, with `if: always()` so failures are still
   inspectable
-- a final `auto-merge` job, gated on the test job succeeding
+- a final `auto-merge` job, gated on the test job succeeding **and** on the PR
+  carrying the `auto-merge` label — unattended merging is opt-in per PR
 
 If the workflow already exists, extend it rather than replacing it.
 
@@ -116,9 +117,11 @@ If the workflow already exists, extend it rather than replacing it.
    Repeat until green. If the failure is genuinely outside the scope of the change,
    say so explicitly with the log excerpt instead of merging.
 
-The workflow's `auto-merge` job also merges on green, so a run that lands while you
-are polling may merge the PR before you do. Re-read the PR state before merging and
-treat "already merged" as success, not an error.
+The workflow's `auto-merge` job merges on green only when a human has applied the
+`auto-merge` label, so on a labelled PR a run that lands while you are polling may
+merge it before you do. Re-read the PR state before merging and treat "already
+merged" as success, not an error. Never apply the `auto-merge` label yourself — it
+is the human's opt-in, not yours; you merge through step 4 above.
 
 ## Reporting back
 

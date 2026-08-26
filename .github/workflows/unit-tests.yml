@@ -4,10 +4,10 @@ on:
   push:
     branches: ["**"]
   pull_request:
-    # ready_for_review is not a default type; without it, marking a draft PR
-    # ready fires no run, so the auto-merge job below would never trigger for
-    # the open-as-draft flow.
-    types: [opened, synchronize, reopened, ready_for_review]
+    # ready_for_review and labeled are not default types. Without them, marking
+    # a draft PR ready or applying the auto-merge label fires no run, so the
+    # auto-merge job below would stay unreachable until the next push.
+    types: [opened, synchronize, reopened, ready_for_review, labeled]
   workflow_dispatch:
 
 permissions:
@@ -81,10 +81,14 @@ jobs:
   auto-merge:
     name: Auto-merge PR on green
     needs: test
+    # Opt-in only: a PR merges unattended solely when a human has applied the
+    # "auto-merge" label to it. Without the label this job skips and the PR
+    # waits for a human to merge it.
     if: >-
       github.event_name == 'pull_request' &&
       github.event.pull_request.draft == false &&
-      github.event.pull_request.head.repo.full_name == github.repository
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      contains(github.event.pull_request.labels.*.name, 'auto-merge')
     runs-on: ubuntu-latest
 
     steps:
