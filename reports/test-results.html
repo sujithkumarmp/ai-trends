@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unit Test Results</title>
+<style>
+:root { color-scheme: light dark; --fg: #1c1c1c; --bg: #ffffff; --muted: #5b6470;
+        --line: #d7dce3; --row: #f6f8fa; --pass: #1a7f37; --fail: #cf222e;
+        --skip: #9a6700; }
+@media (prefers-color-scheme: dark) {
+  :root { --fg: #e6edf3; --bg: #0d1117; --muted: #9198a1; --line: #30363d;
+          --row: #161b22; --pass: #3fb950; --fail: #f85149; --skip: #d29922; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 2rem 1.25rem; background: var(--bg); color: var(--fg);
+       font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+main { max-width: 60rem; margin: 0 auto; }
+h1 { font-size: 1.6rem; margin: 0 0 .35rem; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .6rem; }
+h3 { font-size: 1rem; margin: 1.4rem 0 .4rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.meta { color: var(--muted); font-size: .9rem; margin-bottom: 1.25rem; }
+.badge { display: inline-block; padding: .15rem .6rem; border-radius: 999px;
+         font-size: .8rem; font-weight: 600; color: #fff; }
+.badge.pass { background: var(--pass); }
+.badge.fail { background: var(--fail); }
+.cards { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1rem 0 1.5rem; }
+.card { flex: 1 1 7rem; border: 1px solid var(--line); border-radius: .5rem; padding: .7rem .9rem; }
+.card .n { font-size: 1.5rem; font-weight: 600; }
+.card .k { color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; }
+.card.p .n { color: var(--pass); } .card.f .n { color: var(--fail); } .card.s .n { color: var(--skip); }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--line); }
+th { font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+tbody tr:nth-child(even) { background: var(--row); }
+td.num, th.num { text-align: right; white-space: nowrap; }
+code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+pre { background: var(--row); border: 1px solid var(--line); border-radius: .5rem;
+      padding: .8rem; overflow-x: auto; font-size: .85rem; }
+.st-passed { color: var(--pass); } .st-failed, .st-error { color: var(--fail); }
+.st-skipped { color: var(--skip); }
+</style>
+</head>
+<body>
+<main>
+<h1>Unit Test Results</h1>
+<p class="meta">
+  <span class="badge pass">PASSED</span>
+  &nbsp;Generated 2026-08-26 03:14:48 UTC &middot; Duration 0.06s
+</p>
+<div class="cards"><div class="card "><div class="n">41</div><div class="k">total</div></div><div class="card p"><div class="n">41</div><div class="k">passed</div></div><div class="card f"><div class="n">0</div><div class="k">failed</div></div><div class="card f"><div class="n">0</div><div class="k">error</div></div><div class="card s"><div class="n">0</div><div class="k">skipped</div></div></div>
+
+<h2>Tests</h2>
+<div class="scroll"><table>
+<thead><tr><th>Result</th><th>Test</th><th class="num">Time</th></tr></thead>
+<tbody><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.IndicatorTests.test_atr_uses_the_full_high_low_range_when_available</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.IndicatorTests.test_bollinger_bands_bracket_the_middle</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.IndicatorTests.test_ema_of_a_constant_series_is_that_constant</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.IndicatorTests.test_ema_tracks_a_rising_series_below_the_last_price</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.IndicatorTests.test_indicators_reject_series_that_are_too_short</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.IndicatorTests.test_macd_histogram_is_the_line_minus_the_signal</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.IndicatorTests.test_macd_is_positive_in_an_uptrend</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.IndicatorTests.test_realized_vol_is_higher_for_a_noisier_series</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.IndicatorTests.test_rsi_is_0_when_every_bar_loses</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.IndicatorTests.test_rsi_is_100_when_every_bar_gains</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.IndicatorTests.test_rsi_of_an_uptrend_is_above_that_of_a_downtrend</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.IndicatorTests.test_sma_is_the_mean_of_the_window</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.BlackScholesTests.test_at_expiry_the_price_is_intrinsic</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.BlackScholesTests.test_deltas_have_the_right_sign_and_range</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.BlackScholesTests.test_higher_vol_is_worth_more</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.BlackScholesTests.test_long_options_lose_value_to_time</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.BlackScholesTests.test_put_call_parity_holds</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.BlackScholesTests.test_rejects_a_bad_right</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_a_wider_expiry_widens_the_expected_move</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_cheap_premium_into_earnings_buys_a_straddle</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_confidence_is_a_probability</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_contracts_scale_the_money_fields_linearly</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_credit_spread_risk_and_reward_add_up_to_the_spread_width</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_debit_spread_risk_and_reward_add_up_to_the_spread_width</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_downtrend_produces_a_bearish_directional_plan</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_earnings_inside_the_expiry_is_flagged_as_a_risk</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_implied_vol_is_inferred_and_flagged_when_omitted</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_iv_rank_is_derived_from_the_supplied_history</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_probability_of_profit_stays_between_0_and_1</code></td><td class="num">0.002s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_range_bound_stock_with_no_catalyst_stands_aside</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_range_bound_stock_with_rich_premium_sells_an_iron_condor</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_report_mentions_the_ticker_and_the_strategy</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_report_renders_for_a_no_trade_verdict</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_short_history_still_analyzes_but_flags_the_gap</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.AnalyzerTests.test_uptrend_produces_a_bullish_directional_plan</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.ValidationTests.test_rejects_a_non_positive_expiry</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.ValidationTests.test_rejects_a_non_positive_implied_vol</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.ValidationTests.test_rejects_a_non_positive_size</code></td><td class="num">0.001s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.ValidationTests.test_rejects_misaligned_highs_or_lows</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.ValidationTests.test_rejects_non_positive_prices</code></td><td class="num">0.000s</td></tr><tr><td class="st-passed">✅ passed</td><td><code>tests.test_option_analyzer.ValidationTests.test_rejects_too_little_history</code></td><td class="num">0.000s</td></tr></tbody>
+</table></div>
+
+</main>
+</body>
+</html>
